@@ -40,7 +40,7 @@ tr.late td{background:var(--rdbg);}
 <div class="hero"><h1>물류현황판 <span style="float:right"><a class="hbtn" href="https://lovelyjinny.github.io/OPR_STORE_BOARD/">🏬 매장판 →</a><a class="hbtn" href="https://lovelyjinny.github.io/OPR_SCM_BOARD/">⏱ SCM 대시보드 →</a><a class="hbtn" href="https://lovelyjinny.github.io/item-board/">📊 매입현황판 →</a></span></h1>
 <p class="sub">기준일 2026-08-06 · 숫자를 클릭하면 브랜드별 PCS가 나옵니다</p>
 <p class="sub">📄 원천: 재고 08-06 08:22 · 발주 08-03 11:11 · 칸반 <b style="color:#8fd6a5">실시간</b> · 펀드 펀드_최신_260722.csv</p></div>
-<div class="tabs"><button class="tab on" data-t="pu">🟡 필업</button><button class="tab" data-t="in">🚚 입고 예정</button><button class="tab" data-t="wk">🏭 물류 작업 중</button><button class="tab" data-t="vs">📊 예정 vs 실적</button></div>
+<div class="tabs"><button class="tab on" data-t="pu">🟡 필업</button><button class="tab" data-t="in">🚚 입고 예정(아이템)</button><button class="tab" data-t="bd">🏷 입고 예정(브랜드)</button><button class="tab" data-t="wk">🏭 물류 작업 중</button><button class="tab" data-t="vs">📊 예정 vs 실적</button></div>
 <div class="tabsec" data-tab="pu"><h2>🟡 필업 — 물류 → 매장 보내기</h2>
 <p class="hint">매장 재고가 앞으로 4주 판매보다 적은 아이템 — 물류 창고 것을 미리 매장에 깔아야 함. 판매가 본격화되면 늘어남</p>
 <div class="catbar"><button class="cbtn on" data-t="pu" data-c="전체">전체</button><button class="cbtn" data-t="pu" data-c="여성">여성</button><button class="cbtn" data-t="pu" data-c="남성">남성</button><button class="cbtn" data-t="pu" data-c="아동">아동</button><button class="cbtn" data-t="pu" data-c="잡화">잡화</button></div>
@@ -54,8 +54,8 @@ tr.late td{background:var(--rdbg);}
 </div>
 <div class="ok-note">🟢 지금은 필업 필요 없음 — 매장 재고가 향후 4주 판매를 커버하고 있어요</div>
 </div>
-<div class="tabsec" data-tab="in" style="display:none"><h2>🚚 입고 예정 — 오는 중인 물량</h2>
-<p class="hint">칸 = 그 주 센터 도착 예정 수량 (발주 + 매입확정, 국내 2주/해외 10주 추정) · 숫자 클릭 = 브랜드별</p>
+<div class="tabsec" data-tab="in" style="display:none"><h2>🚚 입고 예정(아이템) — 오는 중인 물량</h2>
+<p class="hint">칸 = 그 주 센터 도착 예정 수량 (발주 + 매입확정, 국내 2주/해외 10주 추정) · 숫자 클릭 = 브랜드별 · 브랜드 단위 합산은 옆 탭</p>
 <div class="catbar"><button class="cbtn on" data-t="in" data-c="전체">전체</button><button class="cbtn" data-t="in" data-c="여성">여성</button><button class="cbtn" data-t="in" data-c="남성">남성</button><button class="cbtn" data-t="in" data-c="아동">아동</button><button class="cbtn" data-t="in" data-c="잡화">잡화</button></div>
 <div class="catblk" data-t="in" data-c="여성">
 <h3><span class="cd" style="background:var(--c여성)"></span>여성</h3>
@@ -107,19 +107,19 @@ tr.late td{background:var(--rdbg);}
 </div>
 <div class="catblk" data-t="in" data-c="아동">
 <h3><span class="cd" style="background:var(--c아동)"></span>아동</h3>
-<div style="overflow-x:auto"><table><tr><th style="text-align:left;min-width:120px">아이템</th><th style="min-width:62px">8월3주</th><th>합계</th></tr>
-<tr><td class="l">패딩다운 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|패딩다운|22">4,898</td><td class="n cn" data-k="in|아동|패딩다운|tot" style="font-weight:800">4,898</td></tr>
-<tr><td class="l">코트 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|코트|22">225</td><td class="n cn" data-k="in|아동|코트|tot" style="font-weight:800">225</td></tr>
-<tr><td class="l">재킷 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|재킷|22">709</td><td class="n cn" data-k="in|아동|재킷|tot" style="font-weight:800">709</td></tr>
-<tr><td class="l">베스트 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|베스트|22">361</td><td class="n cn" data-k="in|아동|베스트|tot" style="font-weight:800">361</td></tr>
-<tr><td class="l">니트 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|니트|22">1,738</td><td class="n cn" data-k="in|아동|니트|tot" style="font-weight:800">1,738</td></tr>
-<tr><td class="l">가디건 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|가디건|22">650</td><td class="n cn" data-k="in|아동|가디건|tot" style="font-weight:800">650</td></tr>
-<tr><td class="l">맨투맨 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|맨투맨|22">12,275</td><td class="n cn" data-k="in|아동|맨투맨|tot" style="font-weight:800">12,275</td></tr>
-<tr><td class="l">셔츠블라우스 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|셔츠블라우스|22">404</td><td class="n cn" data-k="in|아동|셔츠블라우스|tot" style="font-weight:800">404</td></tr>
-<tr><td class="l">원피스 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|원피스|22">1,016</td><td class="n cn" data-k="in|아동|원피스|tot" style="font-weight:800">1,016</td></tr>
-<tr><td class="l">면바지 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|면바지|22">11,242</td><td class="n cn" data-k="in|아동|면바지|tot" style="font-weight:800">11,242</td></tr>
-<tr><td class="l">세트내의 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|세트내의|22">6,567</td><td class="n cn" data-k="in|아동|세트내의|tot" style="font-weight:800">6,567</td></tr>
-<tr><td class="l">ACC <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|ACC|22">1,764</td><td class="n cn" data-k="in|아동|ACC|tot" style="font-weight:800">1,764</td></tr>
+<div style="overflow-x:auto"><table><tr><th style="text-align:left;min-width:120px">아이템</th><th style="min-width:62px">8월3주</th><th style="min-width:62px">10월1주</th><th>합계</th></tr>
+<tr><td class="l">패딩다운 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|패딩다운|22">4,898</td><td></td><td class="n cn" data-k="in|아동|패딩다운|tot" style="font-weight:800">4,898</td></tr>
+<tr><td class="l">코트 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|코트|22">225</td><td></td><td class="n cn" data-k="in|아동|코트|tot" style="font-weight:800">225</td></tr>
+<tr><td class="l">재킷 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|재킷|22">709</td><td></td><td class="n cn" data-k="in|아동|재킷|tot" style="font-weight:800">709</td></tr>
+<tr><td class="l">베스트 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|베스트|22">361</td><td></td><td class="n cn" data-k="in|아동|베스트|tot" style="font-weight:800">361</td></tr>
+<tr><td class="l">니트 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|니트|22">1,738</td><td></td><td class="n cn" data-k="in|아동|니트|tot" style="font-weight:800">1,738</td></tr>
+<tr><td class="l">가디건 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|가디건|22">650</td><td></td><td class="n cn" data-k="in|아동|가디건|tot" style="font-weight:800">650</td></tr>
+<tr><td class="l">맨투맨 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|맨투맨|22">12,275</td><td></td><td class="n cn" data-k="in|아동|맨투맨|tot" style="font-weight:800">12,275</td></tr>
+<tr><td class="l">셔츠블라우스 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|셔츠블라우스|22">404</td><td></td><td class="n cn" data-k="in|아동|셔츠블라우스|tot" style="font-weight:800">404</td></tr>
+<tr><td class="l">원피스 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|원피스|22">1,016</td><td></td><td class="n cn" data-k="in|아동|원피스|tot" style="font-weight:800">1,016</td></tr>
+<tr><td class="l">면바지 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|면바지|22">11,242</td><td></td><td class="n cn" data-k="in|아동|면바지|tot" style="font-weight:800">11,242</td></tr>
+<tr><td class="l">세트내의 <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|세트내의|22">6,567</td><td></td><td class="n cn" data-k="in|아동|세트내의|tot" style="font-weight:800">6,567</td></tr>
+<tr><td class="l">ACC <span class="s2">국내</span></td><td class="n cn" data-k="in|아동|ACC|22">1,764</td><td></td><td class="n cn" data-k="in|아동|ACC|tot" style="font-weight:800">1,764</td></tr>
 </table></div>
 </div>
 <div class="catblk" data-t="in" data-c="잡화">
@@ -137,6 +137,9 @@ tr.late td{background:var(--rdbg);}
 <tr><td class="l">리빙(기타) <span class="s2">해외</span></td><td class="n cn" data-k="in|잡화|리빙(기타)|22">32</td><td class="n cn" data-k="in|잡화|리빙(기타)|30">1,837</td><td class="n cn" data-k="in|잡화|리빙(기타)|tot" style="font-weight:800">1,869</td></tr>
 </table></div>
 </div>
+</div>
+<div class="tabsec" data-tab="bd" style="display:none"><h2>🏷 입고 예정(브랜드) — 어떤 브랜드가 언제 오나</h2>
+<p class="hint">발주 + 매입확정(💜=품의) 물량을 브랜드×주차로 합산 · 도착주 = 오늘+리드타임 추정 (확약은 오더 단위: 댄존·레베카밍코프 해외 10주, 그 외 국내 2주)</p>
 <h3 style="margin-top:16px">🏷 브랜드별 합산 — 주차별 도착 예정</h3><p class="hint">일반 브랜드 상위 25 (수량 큰 순) · 대형 정기물량은 아래 별도</p>
 <div style="overflow-x:auto"><table><tr><th style="text-align:left;min-width:150px">브랜드</th><th style="min-width:62px">8월3주</th><th style="min-width:62px">10월1주</th><th>합계</th></tr>
 <tr><td class="l">💜 스파이더/아놀드파마/하더/볼텍(자동)</td><td class="n">28,088</td><td class="n"></td><td class="n" style="font-weight:800">28,088</td></tr>
