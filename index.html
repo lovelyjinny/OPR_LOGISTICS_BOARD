@@ -49,7 +49,7 @@ tr.late td{background:var(--rdbg);}
 <p class="sub">기준일 2026-08-19 · 모든 수치 = 장(PCS) · 숫자를 클릭하면 브랜드별 수량이 나옵니다</p>
 <p class="sub">📄 원천: 재고 08-19 07:57 · 발주 08-10 20:58 · 칸반 <b style="color:#8fd6a5">실시간</b> · 펀드 펀드_최신_260722.csv</p></div>
 <div style="background:#fcf3d7;border:1.5px solid #e3c14e;color:#9a6b00;border-radius:10px;padding:10px 16px;margin:0 0 12px;font-size:13.5px;font-weight:700">⚠️ 데이터 신선도: 발주관리 9일 경과 — 조치신호·발주잔이 옛 기준일 수 있음 · MDP 일정 9일 경과 — 예정입고일 신뢰도 저하</div>
-<div class="tabs"><button class="tab on" data-t="md">📋 MD 판단표 (부족·과잉)</button><button class="tab" data-t="pu">🟡 필업</button><button class="tab" data-t="in">🚚 입고 예정(아이템)</button><button class="tab" data-t="bd">🏷 입고 예정(브랜드)</button><button class="tab" data-t="wk">🏭 물류 작업 중</button><button class="tab" data-t="vs">📊 예정 vs 실적</button></div>
+<div class="tabs"><button class="tab on" data-t="md">📋 MD 판단표 (부족·과잉)</button><button class="tab" data-t="pu">🟡 필업</button><button class="tab" data-t="tr">📦 필업 지시·이행</button><button class="tab" data-t="in">🚚 입고 예정(아이템)</button><button class="tab" data-t="bd">🏷 입고 예정(브랜드)</button><button class="tab" data-t="wk">🏭 물류 작업 중</button><button class="tab" data-t="vs">📊 예정 vs 실적</button></div>
 <div class="tabsec" data-tab="md"><h2>📋 MD 판단표 — 아이템별 부족·과잉 한눈에 <span class="s2">(8/25 물류 고정화 미팅용 1차 정리 · 판정은 SCM 대시보드와 동일)</span></h2>
 <p class="hint">🔴 <b>매입 필요</b>=물류까지 바닥나는 시점 있음 · 🟡 <b>필업</b>=매장만 부족(물류에 있음) · ⚠️ <b>과잉</b>=공급(매장+물류+미입고)이 남은 시즌 예상판매의 1.6배↑ · 🟢 OK · 숫자 클릭=브랜드별 · "조치 제안"은 판의 계산 결과이고 최종 판단은 MD/물류 — 미팅에서 틀린 것·안 맞는 것 적어주세요(조치 기록은 매입현황판 ＋기록)</p>
 <div class="catbar"><button class="cbtn on" data-t="md" data-c="전체">전체</button><button class="cbtn" data-t="md" data-c="여성">여성</button><button class="cbtn" data-t="md" data-c="남성">남성</button><button class="cbtn" data-t="md" data-c="아동">아동</button><button class="cbtn" data-t="md" data-c="잡화">잡화</button></div>
@@ -140,6 +140,10 @@ tr.late td{background:var(--rdbg);}
 <tr><td class="l"><b>리빙(침구)</b></td><td><span class="pill p-g" style="margin:0">🟢 OK</span></td><td class="n cn" data-k="md|잡화|리빙(침구)|logi">0</td><td class="n cn" data-k="md|잡화|리빙(침구)|store">70</td><td class="n">0</td><td><span class="s2">없음</span></td><td class="n">-6</td><td class="n">—</td><td class="n"><span class="s2">—</span></td><td class="n"><span class="s2">—</span></td><td class="l" style="font-size:14px;white-space:normal"><span class="s2">공급 OK</span></td></tr>
 </table></div>
 <p class="hint" style="margin-top:10px">합계: 🔴 27 · 🟡 28 · ⚠️ 10 · 🟢 5 아이템 · 물류재고·매장재고는 26FW 신상(이월 제외), 미입고=발주했으나 아직 센터 미도착(+품의 확약), 남은 시즌 예상판매=오늘~27.2월(추세+의지, PLC 분포) · 공급÷수요=(매장+물류+미입고+확약)÷남은 수요</p>
+</div>
+<div class="tabsec" data-tab="tr" style="display:none"><h2>📦 필업 지시 · 이행 추적 <span class="s2">(지시서 = 제안, 물류·MD 확정 후 STO → 다음 갱신 때 출고와 자동 대사)</span></h2>
+<p class="hint">오늘 지시서: <b>2026-08-19</b> — 아이템 7개 · <b>2,844장</b> · 파일 <code>output\필업지시서_260819.xlsx</code> (매장×아이템×브랜드×수량, 매장요약·아이템요약 시트) · 매장 배분=매장판 부족분 몫, 브랜드=물류 보유 비중</p>
+<div class="ok-note" style="background:#f7f8fa;border-color:#e6e9ee;color:#5c6773">직전 지시 스냅샷이 아직 없습니다 — 오늘 지시서가 첫 발행이라 다음 갱신부터 STO 출고와 대사합니다.</div>
 </div>
 <div class="tabsec" data-tab="pu" style="display:none"><h2>🟡 필업 — 물류 → 매장 보내기</h2>
 <p class="hint">매장 재고가 도착 시점(2주 뒤)부터 4주 판매보다 적은 아이템 — 물류 창고 것을 미리 매장에 깔아야 함 · <b>보낼 양 클릭=매장별 배분 제안</b>. 판매가 본격화되면 늘어남</p>
