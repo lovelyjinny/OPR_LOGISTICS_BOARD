@@ -487,8 +487,8 @@ function showTab(t){
     s.style.display=on?'':'none';
   });
 }
-function showSub(v){ SUB=v; document.querySelectorAll('.sbtn').forEach(function(b){ b.classList.toggle('on',b.dataset.s===v); }); showTab((location.hash||'#md').slice(1)); }
-document.addEventListener('click',function(e){ var b=e.target.closest && e.target.closest('.sbtn'); if(b){ e.stopPropagation(); showSub(b.dataset.s); } },true);
+function showSub(v){ SUB=v; document.querySelectorAll('.sbtn').forEach(function(b){ b.classList.toggle('on',b.dataset.s===v); }); showTab('pu'); }
+document.querySelectorAll('.sbtn').forEach(function(b){ b.addEventListener('click',function(e){ e.stopPropagation(); showSub(b.dataset.s); }); });
 showTab((location.hash||'#md').slice(1));
 window.addEventListener('hashchange',function(){ showTab((location.hash||'#md').slice(1)); });
 document.querySelectorAll('.tab').forEach(function(b){
