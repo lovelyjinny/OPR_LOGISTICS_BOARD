@@ -17,6 +17,9 @@ body{font-family:'Malgun Gothic','Segoe UI',sans-serif;margin:0;background:var(-
 .catbar{display:flex;gap:7px;margin:0 0 12px;flex-wrap:wrap;}
 .cbtn{border:1px solid var(--line);background:var(--srf);color:var(--ink2);border-radius:16px;padding:6px 16px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;}
 .cbtn.on{background:var(--bl);border-color:var(--bl);color:#fff;}
+.subbar{display:flex;gap:8px;margin:0 0 12px;flex-wrap:wrap}
+.sbtn{border:1px solid var(--line);background:var(--srf);color:var(--ink2);border-radius:9px;padding:7px 16px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit}
+.sbtn.on{background:#27395e;color:#fff;border-color:#27395e}
 .tabsec{background:var(--srf);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin:0 0 14px;box-shadow:0 1px 4px rgba(28,39,64,.06);}
 h2{font-size:18.5px;margin:0 0 6px;font-weight:800;}
 h3{font-size:15.5px;margin:12px 0 6px;font-weight:800;}
@@ -138,7 +141,7 @@ tr.late td{background:var(--rdbg);}
 </table></div>
 <p class="hint" style="margin-top:10px">합계: 🔴 25 · 🟡 30 · ⚠️ 8 · 🟢 7 아이템 · 물류재고·매장재고는 26FW 신상(이월 제외), 미입고=발주했으나 아직 센터 미도착(+품의 확약), 남은 시즌 예상판매=오늘~27.2월(추세+의지, PLC 분포) · 공급÷수요=(매장+물류+미입고+확약)÷남은 수요</p>
 </div>
-<div class="tabsec" data-tab="pu" style="display:none"><h2>🟡 필업 — 물류 → 매장 보내기</h2>
+<div class="tabsec" data-tab="pu" data-sub="pu1" style="display:none"><div class="subbar"><button class="sbtn on" data-s="pu1">🟡 필업</button><button class="sbtn" data-s="pu2">🗓 타임라인</button><button class="sbtn" data-s="pu3">📦 지시 · 이행</button></div><h2>🟡 필업 — 물류 → 매장 보내기</h2>
 <p class="hint">매장 재고가 도착 시점(2주 뒤)부터 4주 판매보다 적은 아이템 — 물류 창고 것을 미리 매장에 깔아야 함 · <b>보낼 양 클릭=매장별 배분 제안</b>. 판매가 본격화되면 늘어남</p>
 <div class="catbar"><button class="cbtn on" data-t="pu" data-c="전체">전체</button><button class="cbtn" data-t="pu" data-c="여성">여성</button><button class="cbtn" data-t="pu" data-c="남성">남성</button><button class="cbtn" data-t="pu" data-c="아동">아동</button><button class="cbtn" data-t="pu" data-c="잡화">잡화</button></div>
 <div class="catblk" data-t="pu" data-c="여성">
@@ -160,7 +163,7 @@ tr.late td{background:var(--rdbg);}
 <div class="catblk" data-t="pu" data-c="잡화">
 </div>
 </div>
-<div class="tabsec" data-tab="pu" style="display:none"><h2>🗓 타임라인 — 언제 보내야 하나</h2>
+<div class="tabsec" data-tab="pu" data-sub="pu2" style="display:none"><div class="subbar"><button class="sbtn" data-s="pu1">🟡 필업</button><button class="sbtn on" data-s="pu2">🗓 타임라인</button><button class="sbtn" data-s="pu3">📦 지시 · 이행</button></div><h2>🗓 타임라인 — 언제 보내야 하나</h2>
 <p class="hint">띠 = 주차별 <b>물류→매장 보낼 양</b> (진할수록 많이) · 회색 = 그 주는 매장이 자체 커버 · <b>"이번 주 0"이어도 띠가 진해지는 주가 있으면 물류에 쌓인 게 그때 빠져야 함</b> · 띠 위에 마우스 = 수량</p>
 <div class="catbar"><button class="cbtn on" data-t="pt" data-c="전체">전체</button><button class="cbtn" data-t="pt" data-c="여성">여성</button><button class="cbtn" data-t="pt" data-c="남성">남성</button><button class="cbtn" data-t="pt" data-c="아동">아동</button><button class="cbtn" data-t="pt" data-c="잡화">잡화</button></div>
 <div class="catblk" data-t="pt" data-c="여성">
@@ -237,7 +240,7 @@ tr.late td{background:var(--rdbg);}
 <tr><td class="l">벨트</td><td class="n">601</td><td class="n">0</td><td class="n" style="font-weight:700">70</td><td><div class="ptl"><span class="tick" style="left:1.6%">8월</span><span class="tick" style="left:8.1%">9월</span><span class="tick" style="left:24.2%">10월</span><span class="tick" style="left:40.3%">11월</span><span class="tick" style="left:56.5%">12월</span><span class="tick" style="left:72.6%">1월</span><span class="tick" style="left:88.7%">2월</span><div class="pband"><i style="background:#f1f3f6" title="8/4: 매장 자체 커버"></i><i style="background:#f1f3f6" title="8/5: 매장 자체 커버"></i><i style="background:#f1f3f6" title="9/1: 매장 자체 커버"></i><i style="background:#f1f3f6" title="9/2: 매장 자체 커버"></i><i style="background:#f1f3f6" title="9/3: 매장 자체 커버"></i><i style="background:#f1f3f6" title="9/4: 매장 자체 커버"></i><i style="background:#f1f3f6" title="9/5: 매장 자체 커버"></i><i style="background:#f1f3f6" title="10/1: 매장 자체 커버"></i><i style="background:#f1f3f6" title="10/2: 매장 자체 커버"></i><i style="background:#f1f3f6" title="10/3: 매장 자체 커버"></i><i style="background:#f1f3f6" title="10/4: 매장 자체 커버"></i><i style="background:#f1f3f6" title="10/5: 매장 자체 커버"></i><i style="background:#f1f3f6" title="11/1: 매장 자체 커버"></i><i style="background:#f1f3f6" title="11/2: 매장 자체 커버"></i><i style="background:#f1f3f6" title="11/3: 매장 자체 커버"></i><i style="background:#f1f3f6" title="11/4: 매장 자체 커버"></i><i style="background:#f1f3f6" title="11/5: 매장 자체 커버"></i><i style="background:#f1f3f6" title="12/1: 매장 자체 커버"></i><i style="background:#f1f3f6" title="12/2: 매장 자체 커버"></i><i style="background:#f1f3f6" title="12/3: 매장 자체 커버"></i><i style="background:#f1f3f6" title="12/4: 매장 자체 커버"></i><i style="background:#f1f3f6" title="12/5: 매장 자체 커버"></i><i style="background:#f1f3f6" title="1/1: 매장 자체 커버"></i><i style="background:#f1f3f6" title="1/2: 매장 자체 커버"></i><i style="background:#f1f3f6" title="1/3: 매장 자체 커버"></i><i style="background:#f1f3f6" title="1/4: 매장 자체 커버"></i><i style="background:#f1f3f6" title="1/5: 매장 자체 커버"></i><i style="background:#f1f3f6" title="2/1: 매장 자체 커버"></i><i style="background:rgba(43,108,176,0.22)" title="2/2: 2장"></i><i style="background:rgba(43,108,176,1.00)" title="2/3: 37장"></i><i style="background:rgba(43,108,176,0.87)" title="2/4: 31장"></i></div></div></td></tr>
 </table>
 </div>
-<div class="tabsec" data-tab="tr" style="display:none"><h2>📦 필업 지시 · 이행 추적 <span class="s2">(지시서 = 제안, 물류·MD 확정 후 STO → 다음 갱신 때 출고와 자동 대사)</span></h2>
+<div class="tabsec" data-tab="tr" data-sub="pu3" style="display:none"><div class="subbar"><button class="sbtn" data-s="pu1">🟡 필업</button><button class="sbtn" data-s="pu2">🗓 타임라인</button><button class="sbtn on" data-s="pu3">📦 지시 · 이행</button></div><h2>📦 필업 지시 · 이행 추적</h2>
 <p class="hint">오늘 지시서: <b>2026-08-20</b> — 아이템 7개 · <b>2,756장</b> · 파일 <code>output\필업지시서_260820.xlsx</code> (매장×아이템×브랜드×수량, 매장요약·아이템요약 시트) · 매장 배분=매장판 부족분 몫, 브랜드=물류 보유 비중</p>
 <div class="ok-note" style="background:#eef2f8;border-color:#c7d2e3;color:#27395e">직전 지시 <b>2026-08-19</b> 2,844장 → 이후 STO 물류→매장 출고(2026-08-19~2026-08-20) <b>0장 = 이행 0%</b> <span class="s2">(출고=STO 완료·출고 상태, 지시 아이템과 같은 카테고리·아이템·도착매장 기준 대사)</span></div>
 <table style="table-layout:fixed;margin-top:10px"><colgroup><col style="width:9%"><col style="width:14%"><col style="width:10%"><col style="width:10%"><col style="width:9%"><col style="width:48%"></colgroup><tr><th>카테</th><th style="text-align:left">아이템</th><th>지시(장)</th><th>출고(장)</th><th>이행률</th><th style="text-align:left">매장별 지시→출고 (상위)</th></tr>
@@ -475,10 +478,17 @@ tr.late td{background:var(--rdbg);}
 <script>
 /* 통합보드 사이드바 진입: #md #pu #tr #in #wk #vs (in은 아이템+브랜드 함께) */
 var TABMAP={md:['md'],pu:['pu','tr'],tr:['pu','tr'],'in':['in','bd'],wk:['wk'],vs:['vs']};   /* 필업+지시·이행 한 화면 (지니 08-20) */
+var SUB='pu1';
 function showTab(t){
   var want=TABMAP[t]||['md'];
-  document.querySelectorAll('.tabsec').forEach(function(s){ s.style.display=(want.indexOf(s.dataset.tab)>=0)?'':'none'; });
+  document.querySelectorAll('.tabsec').forEach(function(s){
+    var on=(want.indexOf(s.dataset.tab)>=0);
+    if(on && s.dataset.sub) on=(s.dataset.sub===SUB);
+    s.style.display=on?'':'none';
+  });
 }
+function showSub(v){ SUB=v; document.querySelectorAll('.sbtn').forEach(function(b){ b.classList.toggle('on',b.dataset.s===v); }); showTab((location.hash||'#md').slice(1)); }
+document.addEventListener('click',function(e){ var b=e.target.closest && e.target.closest('.sbtn'); if(b){ e.stopPropagation(); showSub(b.dataset.s); } },true);
 showTab((location.hash||'#md').slice(1));
 window.addEventListener('hashchange',function(){ showTab((location.hash||'#md').slice(1)); });
 document.querySelectorAll('.tab').forEach(function(b){
