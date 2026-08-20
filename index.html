@@ -255,7 +255,7 @@ tr.late td{background:var(--rdbg);}
 </div>
 <div class="leg" style="display:flex;gap:16px;align-items:center;margin-top:8px"><span><i class="sw" style="background:#f1f3f6"></i>매장이 자체 커버</span><span><i class="sw" style="background:rgba(43,108,176,.35)"></i>조금 보냄</span><span><i class="sw" style="background:rgba(43,108,176,1)"></i>많이 보냄</span></div>
 </div>
-<div class="tabsec" data-tab="in" style="display:none"><h2>🚚 입고 예정(아이템) — 오는 중인 물량</h2>
+<div class="tabsec" data-tab="in" data-sub="in1" style="display:none"><div class="subbar"><button class="sbtn on" data-s="in1">🚚 아이템</button><button class="sbtn" data-s="in2">🏷 브랜드</button></div><h2>🚚 입고 예정(아이템) — 오는 중인 물량</h2>
 <p class="hint">칸 = 그 주 센터 도착 예정 수량(발주완료+매입확정) · 도착주 = ①MDP 실일정 ②<b>계절월 역산(판매월−실측 선행 국내32/해외48일)</b> ③리드타임 추정 · 숫자 클릭 = 브랜드별 · 브랜드 단위 합산은 옆 탭</p>
 <div class="catbar"><button class="cbtn on" data-t="in" data-c="전체">전체</button><button class="cbtn" data-t="in" data-c="여성">여성</button><button class="cbtn" data-t="in" data-c="남성">남성</button><button class="cbtn" data-t="in" data-c="아동">아동</button><button class="cbtn" data-t="in" data-c="잡화">잡화</button></div>
 <div class="catblk" data-t="in" data-c="여성">
@@ -345,7 +345,7 @@ tr.late td{background:var(--rdbg);}
 </table></div>
 </div>
 </div>
-<div class="tabsec" data-tab="bd" style="display:none"><h2>🏷 입고 예정(브랜드) — 어떤 브랜드가 언제 오나</h2>
+<div class="tabsec" data-tab="bd" data-sub="in2" style="display:none"><div class="subbar"><button class="sbtn" data-s="in1">🚚 아이템</button><button class="sbtn on" data-s="in2">🏷 브랜드</button></div><h2>🏷 입고 예정(브랜드) — 어떤 브랜드가 언제 오나</h2>
 <p class="hint">발주완료(입고 전) + 매입확정(💜=품의) 물량을 브랜드×주차로 합산 · 도착주 = ①MDP 실일정 ②계절월 역산(실측 선행일) ③리드타임 · 확약은 품의 목표입고일 우선</p>
 <h3 style="margin-top:16px">🏷 브랜드별 합산 — 주차별 도착 예정</h3><p class="hint">일반 브랜드 상위 25 (수량 큰 순) · 대형 정기물량은 아래 별도</p>
 <div style="overflow-x:auto"><table><tr><th style="text-align:left;min-width:150px">브랜드</th><th style="min-width:62px">8월4주</th><th style="min-width:62px">8월5주</th><th style="min-width:62px">9월1주</th><th style="min-width:62px">9월2주</th><th style="min-width:62px">9월5주</th><th style="min-width:62px">10월1주</th><th style="min-width:62px">10월3주</th><th style="min-width:62px">11월1주</th><th>합계</th></tr>
@@ -478,16 +478,18 @@ tr.late td{background:var(--rdbg);}
 <script>
 /* 통합보드 사이드바 진입: #md #pu #tr #in #wk #vs (in은 아이템+브랜드 함께) */
 var TABMAP={md:['md'],pu:['pu','tr'],tr:['pu','tr'],'in':['in','bd'],wk:['wk'],vs:['vs']};   /* 필업+지시·이행 한 화면 (지니 08-20) */
-var SUB='pu1';
+var SUB={pu:'pu1','in':'in1'};
 function showTab(t){
   var want=TABMAP[t]||['md'];
   document.querySelectorAll('.tabsec').forEach(function(s){
     var on=(want.indexOf(s.dataset.tab)>=0);
-    if(on && s.dataset.sub) on=(s.dataset.sub===SUB);
+    if(on && s.dataset.sub){ var g=s.dataset.sub.replace(/\d+$/,''); on=(s.dataset.sub===SUB[g]); }
     s.style.display=on?'':'none';
   });
 }
-function showSub(v){ SUB=v; document.querySelectorAll('.sbtn').forEach(function(b){ b.classList.toggle('on',b.dataset.s===v); }); showTab('pu'); }
+function showSub(v){ var g=v.replace(/\d+$/,''); SUB[g]=v;
+  document.querySelectorAll('.sbtn').forEach(function(b){ if(b.dataset.s.replace(/\d+$/,'')===g) b.classList.toggle('on',b.dataset.s===v); });
+  showTab(g==='pu'?'pu':'in'); }
 document.querySelectorAll('.sbtn').forEach(function(b){ b.addEventListener('click',function(e){ e.stopPropagation(); showSub(b.dataset.s); }); });
 showTab((location.hash||'#md').slice(1));
 window.addEventListener('hashchange',function(){ showTab((location.hash||'#md').slice(1)); });
