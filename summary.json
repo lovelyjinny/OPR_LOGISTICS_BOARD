@@ -3,26 +3,26 @@
  "stage": 3,
  "unit": "장",
  "asof": "2026-11-27",
- "generated": "2026-11-27 16:11:41",
+ "generated": "2026-11-27 16:28:11",
  "source": "재고 11/27 08:15 · 발주 11/23 08:57",
  "key": [
   {
    "name": "매입 필요 아이템",
-   "value": 2,
+   "value": 1,
    "unit": "개",
-   "text": "2개"
+   "text": "1개"
   },
   {
    "name": "필업 아이템",
-   "value": 17,
+   "value": 19,
    "unit": "개",
-   "text": "17개"
+   "text": "19개"
   },
   {
    "name": "과잉 아이템",
-   "value": 24,
+   "value": 23,
    "unit": "개",
-   "text": "24개"
+   "text": "23개"
   }
  ],
  "blocked": [
